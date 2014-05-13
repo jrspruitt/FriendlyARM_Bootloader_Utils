@@ -1,6 +1,6 @@
 #!/bin/sh
 #######################################################################
-#    sdcard_formatter_mini210.sh Format SD Card for Mini210 SuperBoot
+#    sdcard_formatter_mini210.sh Format SD Card for Mini2451 SuperBoot
 #    Copyright (C) 2014 Jason Pruitt
 #
 #    This program is free software: you can redistribute it and/or modify
