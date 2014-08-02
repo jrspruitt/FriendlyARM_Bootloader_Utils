@@ -1,4 +1,4 @@
-Friendlyarm SuperBoot Utils
+Friendlyarm Bootloader Utils
 ===========================
 
 A collection of Linux scripts for use with FriendlyARM's SuperBoot bootloader.
