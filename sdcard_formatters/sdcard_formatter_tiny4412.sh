@@ -1,6 +1,6 @@
 #!/bin/sh
 #######################################################################
-#    sdcard_formatter_mini210.sh Format SD Card for Mini210 SuperBoot
+#    sdcard_formatter_tiny4412.sh Format SD Card for Tiny4412 SuperBoot
 #    Copyright (C) 2014 Jason Pruitt
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,7 @@ SDPART="1"
 SB=$2
 help(){
 echo "Usage:";
-echo "	sdcard_formatter_mini210.sh /dev/sd[x] /path/to/SuperBoot210.bin";
+echo "	sdcard_formatter_tiny4412.sh /dev/sd[x] /path/to/SuperBoot4412.bin";
 echo "	Formats SD Card, makes FAT32 partition, and copies Superboot to beginning of card.";
 exit 0;
 }

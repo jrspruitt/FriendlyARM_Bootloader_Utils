@@ -56,17 +56,17 @@ SBAREASIZE=$(($SBSIZE + $GAPSIZE + $BL1SIZE + $RSVSIZE));
 STARTBLOCK=$(($SDSIZE - $SBAREASIZE));
 
 # Zero out end of sdcard
-dd if=/dev/zero of=$SDDEV bs=$BLOCKSIZE skip=$STARTBLOCK count=$SBAREASIZE;
+sudo dd iflag=dsync oflag=dsync if=/dev/zero of=$SDDEV bs=$BLOCKSIZE skip=$STARTBLOCK count=$SBAREASIZE;
 
 (echo o; echo n; echo p; echo 1; echo ; echo $(($STARTBLOCK - $BLOCKSIZE)); echo t; echo c;  echo w;) | sudo /sbin/fdisk $SDDEV > /dev/null 2>&1
 
 sudo /sbin/mkfs.msdos -n "FriendlyARM" $SDDEV$SDPART #> /dev/null 2>&1
 
 START=$STARTBLOCK
-dd if=$SB of=$SDDEV bs=$BLOCKSIZE seek=$START count=$SBSIZE > /dev/null 2>&1
+sudo dd iflag=dsync oflag=dsync if=$SB of=$SDDEV bs=$BLOCKSIZE seek=$START count=$SBSIZE > /dev/null 2>&1
 
 START=$(($START + $GAPSIZE + $SBSIZE))
-dd if=$SB of=$SDDEV bs=$BLOCKSIZE seek=$START count=$BL1SIZE > /dev/null 2>&1
+sudo dd iflag=dsync oflag=dsync if=$SB of=$SDDEV bs=$BLOCKSIZE seek=$START count=$BL1SIZE > /dev/null 2>&1
 
 
 
